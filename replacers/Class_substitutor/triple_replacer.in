@@ -1,0 +1,13 @@
+-coord 6
+-replig 1
+-core AuCCN_OAc_ins_22.xyz
+-ligocc 3
+-ccatoms position_1,position_2,position_3
+-lig ligand_1
+-geometry oct
+-spin 1
+-oxstate III
+-keepHs no
+-ff MMFF94
+-ffoption Before
+-name name_here

@@ -1,0 +1,13 @@
+-coord 6
+-replig 1
+-core CCNAu_OAc.xyz
+-ligocc 1 1
+-ccatoms position_1,position_2
+-lig ligand_1 ligand_2
+-geometry oct
+-spin 1
+-oxstate III
+-keepHs no no
+-ff MMFF94
+-ffoption Before
+-name name_here
