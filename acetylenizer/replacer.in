@@ -1,0 +1,13 @@
+-coord 6
+-replig 1
+-core CoreName
+-ligocc 1
+-ccatoms pos # position of OAcF to be substituted
+-lig acetylene_OAc_anion
+-geometry oct
+-spin 1
+-oxstate III
+-keepHs yes
+-ff MMFF94
+-ffoption Before
+-name name_here
