@@ -1,10 +1,12 @@
 # Core Generation
 To generate scaffolds that are going to be functionalized with substituents, we need to create a simple input file, input_file.in:
-<img width="137" alt="Bilde1" src="https://user-images.githubusercontent.com/12988626/82839581-21762b00-9ed0-11ea-971b-0d7f55089521.png">
+
 
 In this example, the input file named CCNAu_OAc.in is going to be assembled. The complex will be constructed using two ligands – CCN_chn and acetate, both imported from the library. The name of the output complex matches the name of the file – CCNAu_OAc. 
 This file is passed to molSimplify program to assemble the complex as xyz-file with the name specified in the command “name”. 
 The resulting geometry looks like this:
+
+![CCNAu_OAc](https://user-images.githubusercontent.com/12988626/82842254-196eb900-9ed9-11ea-902f-5d2746a0a28f.png)
 
 The same procedure is repeated for other 11 scaffolds. As a result, 12 scaffolds are generated:
 
