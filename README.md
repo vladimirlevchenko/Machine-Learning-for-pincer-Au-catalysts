@@ -1,4 +1,4 @@
-## Core Generation
+# Core Generation
 To generate scaffolds that are going to be functionalized with substituents, we need to create a simple input file, input_file.in:
 <img width="137" alt="Bilde1" src="https://user-images.githubusercontent.com/12988626/82839581-21762b00-9ed0-11ea-971b-0d7f55089521.png">
 
@@ -7,18 +7,18 @@ This file is passed to molSimplify program to assemble the complex as xyz-file w
 The resulting geometry looks like this:
 
 The same procedure is repeated for other 11 scaffolds. As a result, 12 scaffolds are generated:
-_CCN_chn_Au_OAc.xyz_
-_CCNAu_OAc.xyz_
-_N_naph_cyclic_OAc.xyz_
-_N_naph_py_Au_OAc.xyz_
-_naphN_Ph_OAc.xyz_
-_naphP_Ph_OAc.xyz_
-_NHC_Ph_OAc.xyz_
-_oxaz_Au_OAc.xyz_
-_P_naph_cyclic_OAc.xyz_
-_P_naph_py_Au_OAc.xyz_
-_Ph_phtrAu_OAc.xyz_
-_Tilset_Au_OAc.xyz_
+-_CCN_chn_Au_OAc.xyz_
+-_CCNAu_OAc.xyz_
+-_N_naph_cyclic_OAc.xyz_
+-_N_naph_py_Au_OAc.xyz_
+-_naphN_Ph_OAc.xyz_
+-_naphP_Ph_OAc.xyz_
+-_NHC_Ph_OAc.xyz_
+-_oxaz_Au_OAc.xyz_
+-_P_naph_cyclic_OAc.xyz_
+-_P_naph_py_Au_OAc.xyz_
+-_Ph_phtrAu_OAc.xyz_
+-_Tilset_Au_OAc.xyz_
 These scaffolds represent “naked” frameworks to which new substituents are going to be introduced. 
 
 # Introduction of Substituents
@@ -44,10 +44,14 @@ text here
 
 text here
 
-## Randomization of Complexes
+# Randomization of Complexes
+
 text here
+
 # Preparation to HPC subsmission
+
 text here
+
 ## Welcome to GitHub Pages
 
 You can use the [editor on GitHub](https://github.com/vladimirlevchenko/Machine-Learning-for-pincer-Au-catalysts/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
