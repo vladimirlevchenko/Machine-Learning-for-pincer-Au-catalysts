@@ -53,6 +53,22 @@ These scaffolds represent “naked” frameworks to which the substituents are g
 
 Let us assume that we want to generate a mono substituted CCNAu_OAc complex with a benzene ring in position 7. To do that we would simply set up an input file for *molSimplify* - *CCNAu_OAc_mono_7_benzene.in*. The resulted file would then be executed by *molSimplify* together with its “naked” scaffold *CCNAu_OAc.xyz*. The logic behind this is that *molSimplify* uses the xyz-complex CCNAu_OAc as a core, substitutes its hydrogen atom in the position 7 with benzene and saves the output geometry as *CCNAu_OAc_mono_7_benzene.xyz* file, as demonstrated in Fig. X.  
 
+```markdown
+-coord 6
+-replig 1
+-core CCNAu_OAc.xyz
+-ligocc 1
+-ccatoms 7
+-lig benzene
+-geometry oct
+-spin 1
+-oxstate III
+-ff MMFF94
+-ffoption Before
+-name CCNAu_OAc_mono_7_benzene
+-keepHs no
+```
+
 Generation of thousands of such complexes with different ligands, positions and scaffolds would require automatization and thus development of an algorithm that does the job for us. 
 First define a ligand set. 
 Two types of substituents (ligands) we are going to work with – deactivating and activating. In total, there is 10 defined substituents that are going to be introduced.
