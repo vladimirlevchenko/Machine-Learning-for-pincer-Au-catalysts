@@ -6,8 +6,6 @@ In this example, the input file named CCNAu_OAc.in is going to be assembled. The
 This file is passed to molSimplify program to assemble the complex as xyz-file with the name specified in the command “name”. 
 The resulting geometry looks like this:
 
-![CCNAu_OAc](https://user-images.githubusercontent.com/12988626/82842254-196eb900-9ed9-11ea-902f-5d2746a0a28f.png)
-
 ![CCNAu_OAc_white](https://user-images.githubusercontent.com/12988626/82842381-9437d400-9ed9-11ea-8f30-2550738082fb.png)
 
 The same procedure is repeated for other 11 scaffolds. As a result, 12 scaffolds are generated:
