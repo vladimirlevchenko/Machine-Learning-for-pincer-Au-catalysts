@@ -7,20 +7,31 @@ This file is passed to molSimplify program to assemble the complex as xyz-file w
 The resulting geometry looks like this:
 
 The same procedure is repeated for other 11 scaffolds. As a result, 12 scaffolds are generated:
-*_CCN_chn_Au_OAc.xyz_*
 
--_CCNAu_OAc.xyz_
+*CCN_chn_Au_OAc.xyz*
 
--_N_naph_cyclic_OAc.xyz_
--_N_naph_py_Au_OAc.xyz_
--_naphN_Ph_OAc.xyz_
--_naphP_Ph_OAc.xyz_
--_NHC_Ph_OAc.xyz_
--_oxaz_Au_OAc.xyz_
--_P_naph_cyclic_OAc.xyz_
--_P_naph_py_Au_OAc.xyz_
--_Ph_phtrAu_OAc.xyz_
--_Tilset_Au_OAc.xyz_
+*CCNAu_OAc.xyz*
+
+*N_naph_cyclic_OAc.xyz*
+
+*N_naph_py_Au_OAc.xyz*
+
+*naphN_Ph_OAc.xyz*
+
+*naphP_Ph_OAc.xyz*
+
+*NHC_Ph_OAc.xyz*
+
+*oxaz_Au_OAc.xyz*
+
+*P_naph_cyclic_OAc.xyz*
+
+*P_naph_py_Au_OAc.xyz*
+
+*Ph_phtrAu_OAc.xyz*
+
+*Tilset_Au_OAc.xyz*
+
 These scaffolds represent “naked” frameworks to which new substituents are going to be introduced. 
 
 # Introduction of Substituents
