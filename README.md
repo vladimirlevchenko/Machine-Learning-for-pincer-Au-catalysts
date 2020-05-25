@@ -1,4 +1,4 @@
-# Core Generation
+## Core Generation
 To generate scaffolds that are going to be functionalized with substituents, we need to create a simple input file, input_file.in:
 <img width="137" alt="Bilde1" src="https://user-images.githubusercontent.com/12988626/82839581-21762b00-9ed0-11ea-971b-0d7f55089521.png">
 
@@ -44,7 +44,7 @@ text here
 
 text here
 
-# Randomization of Complexes
+## Randomization of Complexes
 text here
 # Preparation to HPC subsmission
 text here
