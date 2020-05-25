@@ -8,6 +8,8 @@ The resulting geometry looks like this:
 
 ![CCNAu_OAc](https://user-images.githubusercontent.com/12988626/82842254-196eb900-9ed9-11ea-902f-5d2746a0a28f.png)
 
+![CCNAu_OAc_white](https://user-images.githubusercontent.com/12988626/82842381-9437d400-9ed9-11ea-8f30-2550738082fb.png)
+
 The same procedure is repeated for other 11 scaffolds. As a result, 12 scaffolds are generated:
 
 *CCN_chn_Au_OAc.xyz*
