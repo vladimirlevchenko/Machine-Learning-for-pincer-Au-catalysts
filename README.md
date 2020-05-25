@@ -7,7 +7,7 @@ This file is passed to molSimplify program to assemble the complex as xyz-file w
 The resulting geometry looks like this:
 
 The same procedure is repeated for other 11 scaffolds. As a result, 12 scaffolds are generated:
--_CCN_chn_Au_OAc.xyz_
+*_CCN_chn_Au_OAc.xyz_*
 
 -_CCNAu_OAc.xyz_
 
