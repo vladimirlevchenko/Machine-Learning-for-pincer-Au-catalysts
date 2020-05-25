@@ -36,8 +36,7 @@ These scaffolds represent “naked” frameworks to which new substituents are g
 
 # Introduction of Substituents
 
-Generation of ONE substituted complex.
-Assume that we aim to generate a mono substituted CCNAu_OAc complex with a benzene ring in position 7. To do that we would set up an input file for molSimplify - CCNAu_OAc_mono_7_benzene.in. The resulted file would then be executed by molSimplify together with its “naked” scaffold CCNAu_OAc.xyz. The logic behind this is that molSimplify uses the xyz-complex CCNAu_OAc as a core, substitutes its atom in the position 7 with a benzene and saves the output geometry as CCNAu_OAc_mono_7_benzene.xyz file, as demonstrated in Fig. X.  
+Let us assume that we want to generate a mono substituted CCNAu_OAc complex with a benzene ring in position 7. To do that we would simply set up an input file for molSimplify - *CCNAu_OAc_mono_7_benzene.in*. The resulted file would then be executed by molSimplify together with its “naked” scaffold CCNAu_OAc.xyz. The logic behind this is that molSimplify uses the xyz-complex CCNAu_OAc as a core, substitutes its atom in the position 7 with a benzene and saves the output geometry as CCNAu_OAc_mono_7_benzene.xyz file, as demonstrated in Fig. X.  
 Generation of thousands of such complexes with different ligands, positions and scaffolds would require automatization and thus development of an algorithm that does the job for us. 
 First define a ligand set. 
 Two types of substituents (ligands) we are going to work with – deactivating and activating. In total, there is 10 defined substituents that are going to be introduced.
