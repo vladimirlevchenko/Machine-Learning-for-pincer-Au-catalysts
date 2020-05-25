@@ -1,6 +1,19 @@
 # Core Generation
-To generate scaffolds that are going to be functionalized with substituents, we need to create a simple input file, input_file.in:
+To generate scaffolds that are going to be functionalized with substituents, we need to create a simple input file, *input_file.in:
 
+```markdown
+-core au
+-geometry oct
+-coord 4
+-lig CCN,acetate
+-ligocc 1 1
+-ff MMFF94
+-ffoption BA
+-spin 1
+-oxstate III
+-keepHs yes
+-name CCNAu_OAc
+```
 
 In this example, the input file named CCNAu_OAc.in is going to be assembled. The complex will be constructed using two ligands – CCN_chn and acetate, both imported from the library. The name of the output complex matches the name of the file – CCNAu_OAc. 
 This file is passed to molSimplify program to assemble the complex as xyz-file with the name specified in the command “name”. 
