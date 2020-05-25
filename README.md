@@ -1,5 +1,6 @@
 # Core generation
 To generate scaffolds that are going to be functionalized with substituents, we need to create a simple input file, input_file.in:
+<img width="137" alt="Bilde1" src="https://user-images.githubusercontent.com/12988626/82839581-21762b00-9ed0-11ea-971b-0d7f55089521.png">
 ## Welcome to GitHub Pages
 
 You can use the [editor on GitHub](https://github.com/vladimirlevchenko/Machine-Learning-for-pincer-Au-catalysts/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
