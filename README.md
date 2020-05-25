@@ -11,7 +11,8 @@ Markdown is a lightweight and easy-to-use syntax for styling your writing. It in
 ```markdown
 Syntax highlighted code block
 
-# Header 1
+# Core generation
+To generate scaffolds that are going to be functionalized with substituents, we need to create a simple input file, input_file.in:
 ## Header 2
 ### Header 3
 
