@@ -8,7 +8,9 @@ The resulting geometry looks like this:
 
 The same procedure is repeated for other 11 scaffolds. As a result, 12 scaffolds are generated:
 -_CCN_chn_Au_OAc.xyz_
+
 -_CCNAu_OAc.xyz_
+
 -_N_naph_cyclic_OAc.xyz_
 -_N_naph_py_Au_OAc.xyz_
 -_naphN_Ph_OAc.xyz_
