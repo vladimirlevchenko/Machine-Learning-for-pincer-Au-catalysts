@@ -105,6 +105,27 @@ Structure of the *replacer_mono.in*. The name of the core, CCNAu_OAc.xyz, is to 
 Execution of the script mono_replacer.py results in a folder “mono_subs_input” with 111 generated (10 substituents x 11 positions) input files for molSimplify. To the generated folder with input files (mono_subs_input) copy CCNAu_OAc.xyz and a bash script from_in_to_xyz.sh and execute the latter. The bash script will generate the geometry of the complexes located in the folder mono_subs_input into a new folder inside it, called “geometries_xyz”.
 Generation of 100 complexes takes ca 10 min.  
 
+```markdown
+|---CCNAu
+	|---mono_subst
+		  --- mono_replacer.py (1st)
+		  --- replacer_mono.in
+		|--- mono_subs_input
+			  --- CCNAu_OAc.xyz (has to be copied here manually)
+			  --- from_in_to_xyz.sh (2nd; has to be copied here manually)
+			  --- CCNAu_OAc_mono_7_benzene.in
+			  	 .
+			  	 .
+			  	 .
+			  --- CCNAu_OAc_mono_30_tBu.in
+		 	 |--- geometries_xyz
+				    --- CCNAu_OAc_mono_7_benzene.xyz
+					    .
+					    .
+					    .
+				    --- CCNAu_OAc_mono_30_tBu.xyz
+```
+
 ## Double Substitution
 
 text here
