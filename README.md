@@ -23,6 +23,8 @@ The resulting geometry looks like this:
 
 The same procedure is repeated for other 11 scaffolds. As a result, 12 scaffolds are generated:
 
+<img width="561" alt="Scaffolds" src="https://user-images.githubusercontent.com/12988626/82888192-51ade000-9f49-11ea-820f-37355da6d1c4.png">
+
 *CCN_chn_Au_OAc.xyz*
 
 *CCNAu_OAc.xyz*
