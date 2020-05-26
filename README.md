@@ -195,23 +195,28 @@ Generation of 100 complexes takes ca 10 min.
 
 Introduction of two substituents can be achieved in two ways: homo- and heterosubstitution. In homosubstitution, both substituents are the same, for example two Cl or two iPr groups. In contrast to heterosubstitution, where two substituents can be different – F and Ph or Et and OH etc.
 
-The generation of a single complex using an input file (demonstrated in pictures below (left)) results in double substituted CCNAu_OAc complex with two Br atoms in positions 30 and 28. This input file can be generalized for the whole scaffold with positions, substituents and name as variables. By varying them, we can introduce as many substituents as we want in the desired positions (Fig 3, right).  
+The input file for the substitution in a single scaffold results in double substituted CCNAu_OAc complex with two Br atoms in positions 30 and 28 (snippet below to the left). This input file can be generalized for the whole scaffold with positions, substituents and name as variables. By varying them, we can introduce as many substituents as we want in the desired positions and in the specified scaffold (snippet to the right):  
 
 ```markdown
 -coord 6							-coord 6
 -replig 1							-replig 1
--core CCNAu_OAc.xyz						-core CCNAu_OAc.xyz
+-core CCNAu_OAc.xyz						-core **CCNAu_OAc.xyz**
 -ligocc 1 1							-ligocc 1 1
--ccatoms 30,28							-ccatoms 30,28
--lig bromide bromide						-lig bromide bromide
+-ccatoms 30,28							-ccatoms **position_1,position_2**
+-lig bromide bromide						-lig **ligand_1 ligand_2**
 -geometry oct							-geometry oct
 -spin 1								-spin 1
 -oxstate III							-oxstate III
 -keepHs no no							-keepHs no no
 -ff MMFF94							-ff MMFF94
 -ffoption Before						-ffoption Before
--name CCNAu_OAc_double_bromide_bromide				-name CCNAu_OAc_double_bromide_bromide
+-name CCNAu_OAc_double_bromide_bromide				-name **name_here**
 ```
+
+Execution of the script *homo_double_replacer.py* creates a folder with 550 .in files, which are going to be used as input files for the geometry generation. The geometries are then generated executing *from_in_to_xyz.sh* bash script (remember the presence of the core structure, CCNAu_OAc.xyz in the running folder).  
+The assembled geometries have specific names, which determine their composition, for example:
+CCNAu_double_benzene_7_29_benzene.xyz – means the the core CCNAu is double substitured with benzene in position 7 and another benzene in position 29.
+
 
 ## Triple Substitution
 
