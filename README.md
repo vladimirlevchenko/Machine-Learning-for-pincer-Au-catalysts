@@ -217,6 +217,7 @@ Execution of the script *homo_double_replacer.py* creates a folder with 550 .in 
 The assembled geometries have specific names, which determine their composition, for example:
 CCNAu_double_benzene_7_29_benzene.xyz – means the the core CCNAu_OAc is double substituted with benzene in position 7 and another benzene in position 29.
 
+![CCNAu_OAc_double_benzene_7_29_benzene](https://user-images.githubusercontent.com/12988626/82897796-7bbace80-9f58-11ea-8d6d-02c3e10e1a7d.png)
 
 ## Triple Substitution
 
