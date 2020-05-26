@@ -82,7 +82,28 @@ Naming – Core name + mono/double/triple + position + substituent + ins (if ins
 
 ## Mono Substitution
 
-text here
+**Requirements**: *mono_replacer.py*, replacing template (*replacer_mono.in*) and scaffold’s core xyz file (*CCNAu_OAc.xyz*).
+
+```markdown
+-coord 6
+-replig 1
+-core CCNAu_OAc.xyz
+-ligocc 1
+-ccatoms **rep_position**
+-lig **ligand_name**
+-geometry oct
+-spin 1
+-oxstate III
+-ff MMFF94
+-ffoption Before
+-name **name_here**
+-keepHs no
+```
+
+Structure of the *replacer_mono.in*. The name of the core, CCNAu_OAc.xyz, is to be added manually depending on the scaffold that is going to be used for substituition. For example, if naphN_Ph_OAc is used for generation of substituted complexes, then its core should be specified as “naphN_Ph_OAc.xyz”. rep_position is a label of a hydrogen atom that is going to be replaced with a substituent (ligand_name). The complex is going to be saved as name_here, which is constructed by the python script.
+
+Execution of the script mono_replacer.py results in a folder “mono_subs_input” with 111 generated (10 substituents x 11 positions) input files for molSimplify. To the generated folder with input files (mono_subs_input) copy CCNAu_OAc.xyz and a bash script from_in_to_xyz.sh and execute the latter. The bash script will generate the geometry of the complexes located in the folder mono_subs_input into a new folder inside it, called “geometries_xyz”.
+Generation of 100 complexes takes ca 10 min.  
 
 ## Double Substitution
 
