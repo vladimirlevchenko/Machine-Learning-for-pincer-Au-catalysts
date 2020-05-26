@@ -221,15 +221,51 @@ CCNAu_double_benzene_7_29_benzene.xyz – means the the core CCNAu_OAc is double
 
 ## Triple Substitution
 
-text here
+Introduction of three substituents can be achieved by executing *triple_replacer.py*. One has to manually edit the postions that are going to be substituted. 
 
 # Randomization of Complexes
 
-text here
+In total it was produced **5180** complexes (*xyz* geometry files), arising from combination of 12 scaffolds, with mono- and double-substitution (homosubstitution) and 10 substituents. To proceed further with exploration of the complexes with machine learning, we have to **randomly** select 1000 complexes, which is achieved by executing *randomizer.py*. The script chooses random 1000 files and moves them into a new folder. The script also creates a text file with the names of the files that were randomly moved.
+
+```ruby
+
+import os, shutil
+import random
+
+os.chdir("Python/for_GitHub/randomizer")
+current_path = os.getcwd()
+print(current_path)
+
+# number of randomly selected files
+batch_size = 1000
+
+random.seed(987)
+# displays all files in the desired folder
+files = os.listdir(current_path)
+random.shuffle(files)
+random_files_list = random.sample(files,k=batch_size)
+
+if not os.path.exists("randomly_selected_files"): os.mkdir("randomly_selected_files")
+with open("README_randomly_selected_files.txt","w") as f:
+    f.write("Randomly selected files")
+    f.write("\n")
+    for element in range(len(random_files_list)):
+        shutil.move(random_files_list[element], "randomly_selected_files")
+        f.write(random_files_list[element])
+        f.write("\n")
+f.close()
+
+```
+
+The script has to be executed in the folder with all complexes (with 5180 *xyz* geometry files).
 
 # Preparation to HPC subsmission
 
-text here
+The next step is to assemble input files to send for DFT calculations to high-performance supercomputer (HPC). Each complex requires its own input file with specifications of the calculations. 
+
+## For a single complex
+
+**General strategy:** take template for DFT calculations -> insert the coordinates from xyz file; keep the same name of the complex -> create SLM file (to submit to HPC) -> submit to HPC (.com and .slm files) 
 
 ## Welcome to GitHub Pages
 
