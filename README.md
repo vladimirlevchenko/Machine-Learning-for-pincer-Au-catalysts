@@ -167,7 +167,7 @@ if __name__ == "__main__":
 
 ```
 
-Execution of the script *mono_replacer.py* results in a folder “mono_subs_input” with 111 (10 substituents x 11 positions) generated input files for *molSimplify*. To the generated folder with input files (mono_subs_input), we have to copy CCNAu_OAc.xyz and a bash script from_in_to_xyz.sh and execute the latter. The bash script will generate the geometry of the complexes located in the folder mono_subs_input into a new folder inside it, called “geometries_xyz”.
+Execution of the script *mono_replacer.py* results in a folder “mono_subs_input” with 111 (10 substituents x 11 positions) generated input files for *molSimplify*. To the generated folder with input files (mono_subs_input), we have to copy *CCNAu_OAc.xyz* and a bash script *from_in_to_xyz.sh* and execute the latter. The bash script will generate the geometry of the complexes located in the folder mono_subs_input into a new folder inside it, called “geometries_xyz”.
 Generation of 100 complexes takes ca 10 min.  
 
 ```markdown
@@ -175,7 +175,7 @@ Generation of 100 complexes takes ca 10 min.
 	|---mono_subst
 		  --- mono_replacer.py (1st)
 		  --- replacer_mono.in
-		|--- mono_subs_input
+		 |--- mono_subs_input
 			  --- CCNAu_OAc.xyz (has to be copied here manually)
 			  --- from_in_to_xyz.sh (2nd; has to be copied here manually)
 			  --- CCNAu_OAc_mono_7_benzene.in
@@ -193,7 +193,25 @@ Generation of 100 complexes takes ca 10 min.
 
 ## Double Substitution
 
-text here
+Introduction of two substituents can be achieved in two ways: homo- and heterosubstitution. In homosubstitution, both substituents are the same, for example two Cl or two iPr groups. In contrast to heterosubstitution, where two substituents can be different – F and Ph or Et and OH etc.
+
+The generation of a single complex using an input file (demonstrated in pictures below (left)) results in double substituted CCNAu_OAc complex with two Br atoms in positions 30 and 28. This input file can be generalized for the whole scaffold with positions, substituents and name as variables. By varying them, we can introduce as many substituents as we want in the desired positions (Fig 3, right).  
+
+```markdown
+-coord 6							-coord 6
+-replig 1							-replig 1
+-core CCNAu_OAc.xyz						-core CCNAu_OAc.xyz
+-ligocc 1 1							-ligocc 1 1
+-ccatoms 30,28							-ccatoms 30,28
+-lig bromide bromide						-lig bromide bromide
+-geometry oct							-geometry oct
+-spin 1								-spin 1
+-oxstate III							-oxstate III
+-keepHs no no							-keepHs no no
+-ff MMFF94							-ff MMFF94
+-ffoption Before						-ffoption Before
+-name CCNAu_OAc_double_bromide_bromide				-name CCNAu_OAc_double_bromide_bromide
+```
 
 ## Triple Substitution
 
