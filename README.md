@@ -267,6 +267,12 @@ The next step is to assemble input files to send for DFT calculations to high-pe
 
 **General strategy:** take template for DFT calculations -> insert the coordinates from xyz file; keep the same name of the complex -> create SLM file (to submit to HPC) -> submit to HPC (.com and .slm files) 
 
+Attached picture below. Right - the input file for DFT calcualtions for complex named NHC_Ph_OAc_double_HSO2Me_13_18_HSO2Me. Generalized template of the input file to submit to the DFT calculations.
+
+<img width="1174" alt="hpc_picture" src="https://user-images.githubusercontent.com/12988626/82899591-8c207880-9f5b-11ea-9d5e-441b0c6234de.png">
+
+Each xyz file contains the geometry of the complex, which is then copied into the DFT_input_template.com file (field to substitute – “file name”). This DFT input file contains two sections: geometry optimization and single point calculations (followed after “—Link1—” command). Also, the file contains computation details, such as basis set (def2SVP), grid dimention and method (pbepbe). The complex’s geometry is first optimizaed in a gas phase and the optimized energy is then taken into the single point calculations, which are performed in acetic acid (HOAc). 
+
 ## Welcome to GitHub Pages
 
 You can use the [editor on GitHub](https://github.com/vladimirlevchenko/Machine-Learning-for-pincer-Au-catalysts/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
