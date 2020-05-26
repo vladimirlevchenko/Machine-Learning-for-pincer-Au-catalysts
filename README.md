@@ -102,7 +102,7 @@ Naming – Core name + mono/double/triple + position + substituent + ins (if ins
 
 The structure of the *replacer_mono.in* is presented in a snippet above. The name of the core, CCNAu_OAc.xyz, needs to be added manually, depending on the scaffold that is going to be used for substituition. For example, if naphN_Ph_OAc is used for generation of substituted complexes, then its core should be specified as “naphN_Ph_OAc.xyz”. **rep_position** is a label of a hydrogen atom that is going to be replaced with a substituent (**ligand_name**). The complex is going to be saved as **name_here**, which is constructed when the python script *mono_replacer.py* is executed.
 
-```markdown
+```ruby
 import os, shutil
 
 #################################################
