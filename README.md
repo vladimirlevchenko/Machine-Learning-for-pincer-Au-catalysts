@@ -82,7 +82,7 @@ Naming – Core name + mono/double/triple + position + substituent + ins (if ins
 
 ## Mono Substitution
 
-**Requirements**: *mono_replacer.py*, replacing template (*replacer_mono.in*) and scaffold’s core xyz file (*CCNAu_OAc.xyz*).
+**Required files:** *mono_replacer.py*, replacing template (*replacer_mono.in*) and scaffold’s core xyz file (*CCNAu_OAc.xyz*).
 
 ```markdown
 -coord 6
