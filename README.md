@@ -419,10 +419,19 @@ After combining the results of all data analysis, we obtain a final *csv* file, 
 
 # Generation of acetylene-inserted complexes
 
-text here
+In order to calculate the thermochemistry, it is required to extract the energies of the product complexes, [Au]-ins-OAc. In practice it means that 1000 of [Au]-OAc complexes that were submitted for the energy calculation, should be converted into their inserted derivatives and send to calculations. 
+The strategy is to replace an acetate group with -CH=CH-OAc in the previously used complexes.
+
+**Required files:** *acetylenizer.py*, *replacer.in*, the *xyz* files that are used for replacement.  
+
+The execution of *acetylenizer.py* will generate .in files that after passing to *molSimplify* will result in xyz geometries. 
+The obtained xyz files are then submitted to HPC and the energies are extracted as described in previous sections. 
 
 # Finalizing the data 
 
+Two csv tables (starting gold complexes and their related inserted complexes) are merged together, the missing data are deleted, and the energies are converted to kcal/mol. Given the calculated energy of acetylene, the overall thermochemistry of the insertion is calculated.  
+
+849 results, 839 thermochemistry_calculations_acetylene.csv
 
 ## Welcome to GitHub Pages
 
