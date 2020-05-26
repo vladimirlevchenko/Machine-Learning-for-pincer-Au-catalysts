@@ -193,7 +193,7 @@ Generation of 100 complexes takes ca 10 min.
 
 ## Double Substitution
 
-Introduction of two substituents can be achieved in two ways: homo- and heterosubstitution. In homosubstitution, both substituents are the same, for example two Cl or two iPr groups. In contrast to heterosubstitution, where two substituents can be different – F and Ph or Et and OH etc.
+Introduction of two substituents to the scaffold can be achieved in two ways: homo- and heterosubstitution. In homosubstitution, both substituents are the same, for example two Cl or two iPr groups. In contrast to heterosubstitution, where two substituents can be different – F and Ph or Et and OH etc. The algorithms for both ways of substitution are slightly different and can be found in *hetero_double_replacer.py* and *homo_double_replacer.py*. In this project, we are going to use homosubstitution.
 
 The input file for the substitution in a single scaffold results in double substituted CCNAu_OAc complex with two Br atoms in positions 30 and 28 (snippet below to the left). This input file can be generalized for the whole scaffold with positions, substituents and name as variables. By varying them, we can introduce as many substituents as we want in the desired positions and in the specified scaffold (snippet to the right):  
 
@@ -215,7 +215,7 @@ The input file for the substitution in a single scaffold results in double subst
 
 Execution of the script *homo_double_replacer.py* creates a folder with 550 .in files, which are going to be used as input files for the geometry generation. The geometries are then generated executing *from_in_to_xyz.sh* bash script (remember the presence of the core structure, CCNAu_OAc.xyz in the running folder).  
 The assembled geometries have specific names, which determine their composition, for example:
-CCNAu_double_benzene_7_29_benzene.xyz – means the the core CCNAu is double substitured with benzene in position 7 and another benzene in position 29.
+CCNAu_double_benzene_7_29_benzene.xyz – means the the core CCNAu_OAc is double substituted with benzene in position 7 and another benzene in position 29.
 
 
 ## Triple Substitution
