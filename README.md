@@ -100,9 +100,71 @@ Naming – Core name + mono/double/triple + position + substituent + ins (if ins
 -keepHs no
 ```
 
-Structure of the *replacer_mono.in*. The name of the core, CCNAu_OAc.xyz, is to be added manually depending on the scaffold that is going to be used for substituition. For example, if naphN_Ph_OAc is used for generation of substituted complexes, then its core should be specified as “naphN_Ph_OAc.xyz”. rep_position is a label of a hydrogen atom that is going to be replaced with a substituent (ligand_name). The complex is going to be saved as name_here, which is constructed by the python script.
+The structure of the *replacer_mono.in* is presented in a snippet above. The name of the core, CCNAu_OAc.xyz, needs to be added manually, depending on the scaffold that is going to be used for substituition. For example, if naphN_Ph_OAc is used for generation of substituted complexes, then its core should be specified as “naphN_Ph_OAc.xyz”. **rep_position** is a label of a hydrogen atom that is going to be replaced with a substituent (**ligand_name**). The complex is going to be saved as **name_here**, which is constructed when the python script *mono_replacer.py* is executed.
 
-Execution of the script mono_replacer.py results in a folder “mono_subs_input” with 111 generated (10 substituents x 11 positions) input files for molSimplify. To the generated folder with input files (mono_subs_input) copy CCNAu_OAc.xyz and a bash script from_in_to_xyz.sh and execute the latter. The bash script will generate the geometry of the complexes located in the folder mono_subs_input into a new folder inside it, called “geometries_xyz”.
+```markdown
+import os, shutil
+
+#################################################
+#
+# "CCNAu_OAc_mono_" should be substituted with a name of the scaffold
+# that this script is run on. For example, if the scaffold is naphP_Ph,
+# then it should be changed to "naph_Ph_OAc_mono_"
+#
+#################################################
+
+
+# defining the pathway to the script file
+os.chdir("/Users/vladimirlevchenko/DokumenterHD/programming/Python")
+os.chdir("Subs_maker_Ligs_and_Pos/replacers_UPDATED/mono")
+print(os.getcwd())
+
+# open a replacement template
+f = open("replacer_mono.in","r")
+template = f.read()
+f.close
+
+
+ligands_list = ["benzene",
+                "bromide",
+                "fluoride",
+                "CH4",
+                "nitro",
+                "OMe",
+                "phCO",
+                "tBu",
+                "phenol",
+                "HSO2Me"]
+
+positions_list = [28,30,29,26,19,9,7,16,14,20,11]
+
+def substitutor_mono(ligands, positions):
+    for i in ligands:
+        for position in positions:
+            #create dir with position as a name
+            if not os.path.exists("mono_subs_input"): os.mkdir("mono_subs_input")
+            #copy the file into the new dir
+            shutil.copy("replacer_mono.in", str(position))
+            os.chdir("mono_subs_input")
+
+            #get the templ and replace the rep_position
+            out = open("CCNAu_OAc_mono_"+str(position)+"_"+ str(i)+".in","w")
+            template_out = template.replace("rep_position",
+            str(position)).replace("name_here",
+            str("CCNAu_OAc_mono_" + str(position)+"_"+str(i))).replace("ligand_name", i)
+
+            out.write(template_out)
+            out.close
+            os.chdir("..")
+            os.remove(str(position))
+
+
+if __name__ == "__main__":
+    substitutor_mono(ligands_list, positions_list)
+
+```
+
+Execution of the script *mono_replacer.py* results in a folder “mono_subs_input” with 111 generated (10 substituents x 11 positions) input files for molSimplify. To the generated folder with input files (mono_subs_input) copy CCNAu_OAc.xyz and a bash script from_in_to_xyz.sh and execute the latter. The bash script will generate the geometry of the complexes located in the folder mono_subs_input into a new folder inside it, called “geometries_xyz”.
 Generation of 100 complexes takes ca 10 min.  
 
 ```markdown
