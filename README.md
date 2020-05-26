@@ -75,7 +75,7 @@ Generation of thousands of such complexes with different ligands, positions and 
 First define a ligand set. 
 Two types of substituents (ligands) we are going to work with – deactivating and activating. In total, there is 10 defined substituents that are going to be introduced.
 
-<img width="809" alt="all_scaffolds_with_ligands" src="https://user-images.githubusercontent.com/12988626/82890848-21684080-9f4d-11ea-97a2-39b33df77978.png">
+<img width="794" alt="all_scaffolds_with_ligands" src="https://user-images.githubusercontent.com/12988626/82891189-9dfb1f00-9f4d-11ea-9389-9586afe360b5.png">
 
 Before we move on, it is required to add the desired ligands to the molSimplify’s database. 
 Naming – Core name + mono/double/triple + position + substituent + ins (if inserted).
