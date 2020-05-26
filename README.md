@@ -275,9 +275,15 @@ Each xyz file contains the geometry of the complex, which is then copied into th
 
 ## For multiple complexes
 
-The submision of multiple complexes require assembly of numerous input files for DFT calculations (.com files). In contrast to the single calculation, submission of multiple files cannot be performed by file-by-file submision. The files should be send in packages, called batches. The batch contain from 20 to 40 files according to the computing power of the HPC. Also, each batch must contain one slm file specifying the names of the complexes to be submitted. 
+The submission of multiple complexes require assembly of numerous input files for DFT calculations (.com files). In contrast to the single calculation, submission of multiple files cannot be performed by file-by-file submission. The files should be send in packages, called batches. The batch contains from 20 to 40 files according to the computing power of the HPC. Also, each batch must contain one slm file specifying the names of the complexes to be submitted. 
 
-HPC_preparation/combined_all/HPC_generator.py: 
+**Required files:** *HPC_generator.py*, *DFT_input_template.com*, *SLM_template.slm*
+
+The only thing that has to be done, is to copy the required files into the folder with xyz geometries and execute *HPC_generator.py*. 
+Execution of *HPC_generator.py* results in folders “Batch_1, 2, … n” containing .com files and generated SLM file. 
+NB! SLM_template.slm sould be deleted from a batch and does not need for a further submission.
+
+HPC_preparation/combined_all/*HPC_generator.py*: 
 
 ```ruby
 import os, shutil
@@ -393,6 +399,17 @@ if __name__ == "__main__":
     SLM_copy()
     SLM_creator()
 ```
+
+# Data Analysis
+
+text here
+
+# Generation of acetylene-inserted complexes
+
+text here
+
+# Finalizing the data 
+
 
 ## Welcome to GitHub Pages
 
