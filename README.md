@@ -275,7 +275,7 @@ Each xyz file contains the geometry of the complex, which is then copied into th
 
 ## For multiple complexes
 
-The submission of multiple complexes require assembly of numerous input files for DFT calculations (.com files). In contrast to the single calculation, submission of multiple files cannot be performed by file-by-file submission. The files should be send in packages, called batches. The batch contains from 20 to 40 files according to the computing power of the HPC. Also, each batch must contain one slm file specifying the names of the complexes to be submitted. 
+The submission of multiple complexes requires assembly of numerous input files for DFT calculations (.com files). In contrast to the single calculation, submission of multiple files cannot be performed by file-by-file submission. The files should be send in packages, called batches. The batch contains from 20 to 40 files according to the computing power of the HPC. Also, each batch must contain one slm file specifying the names of the complexes to be submitted. 
 
 **Required files:** *HPC_generator.py*, *DFT_input_template.com*, *SLM_template.slm*
 
@@ -283,8 +283,7 @@ The only thing that has to be done, is to copy the required files into the folde
 Execution of *HPC_generator.py* results in folders “Batch_1, 2, … n” containing .com files and generated SLM file. 
 NB! SLM_template.slm sould be deleted from a batch and does not need for a further submission.
 
-HPC_preparation/combined_all/*HPC_generator.py*: 
-
+The script *HPC_generator.py* consists of methods for DFT input generation, batch maker and creator of SLM files: 
 ```ruby
 import os, shutil
 
@@ -402,7 +401,18 @@ if __name__ == "__main__":
 
 # Data Analysis
 
-text here
+The DFT calculations result in output files, .log, which have the same name as the DFT input file (.com). The number of the output files should be equal to the number of the input files. 
+The resulted input file contains following important features that have to be checked and collected:
+
+1.	Successful termination of the calculation. 
+
+This is done by seraching “Normal” keyword in the output file and should result in two “Normal termination” lines. If one of them is missing, then the calculations are discarded. 
+
+2.	Energy 
+
+The energy is extracted using searching for “Done:” in the output file. The energy is given in Hartrees.
+The analysis of the output files is performed by executing output_analysis.py. The script assembles a .csv table with name of the file, two normal termination columns and energy. Also it keeps track of the successful calculations and counting those that failed. 
+
 
 # Generation of acetylene-inserted complexes
 
