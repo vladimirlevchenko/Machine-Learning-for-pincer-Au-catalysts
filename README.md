@@ -413,6 +413,9 @@ This is done by seraching “Normal” keyword in the output file and should res
 The energy is extracted using searching for “Done:” in the output file. The energy is given in Hartrees.
 The analysis of the output files is performed by executing output_analysis.py. The script assembles a .csv table with name of the file, two normal termination columns and energy. Also it keeps track of the successful calculations and counting those that failed. 
 
+After combining the results of all data analysis, we obtain a final *csv* file, with 1000 of complexes. The final result contained 914 successfully calculated complexes with 86 dropout. The data are located in *starting_Au_OAc_complexes.csv* file.  
+
+<img width="653" alt="data_analysis" src="https://user-images.githubusercontent.com/12988626/82923482-57241e00-9f7b-11ea-85e7-61dd168706e3.png">
 
 # Generation of acetylene-inserted complexes
 
