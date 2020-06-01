@@ -433,6 +433,10 @@ Two csv tables (starting gold complexes and their related inserted complexes) ar
 
 849 results, 839 thermochemistry_calculations_acetylene.csv
 
+# Data Analysis and Features Generation
+
+In previous section, it was demonstrated how thermochemistry of acetylene insertion reaction can be calculated given the energies of its every reactant. The calculations resulted in 839 thermochemistries for both insertion and protonation. Here, the focus will be on thermochemistry of the acetylene insertion reaction. The span of the different thermochemistry values is demonstrated on histogram below.   
+
 ## Welcome to GitHub Pages
 
 You can use the [editor on GitHub](https://github.com/vladimirlevchenko/Machine-Learning-for-pincer-Au-catalysts/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
