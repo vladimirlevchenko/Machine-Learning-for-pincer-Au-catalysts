@@ -435,6 +435,8 @@ Two csv tables (starting gold complexes and their related inserted complexes) ar
 
 # Data Analysis and Features Generation
 
+## Batch used for Machine Learning investigation (839 complexes)
+
 In previous section, it was demonstrated how thermochemistry of acetylene insertion reaction can be calculated given the energies of its every reactant. The calculations resulted in 839 thermochemistries for both insertion and protonation. Here, the focus will be on thermochemistry of the acetylene insertion reaction. The span of the different thermochemistry values is demonstrated on histogram below.   
 
 ![histogram_dG_acetylene_insertion](https://user-images.githubusercontent.com/12988626/83451761-cd32f400-a457-11ea-9b05-2ff814479994.png)
@@ -453,8 +455,15 @@ Data are stored in folder “mol_data_TRAINING”
 
 MFs are generated using RDKit
 
-Run script *RDKit_features_MFPs.ipynb* located in folder “mol_data_TRAINING”. The script generates a csv file (*MFP_and_Targets_839_complexes.csv*) with targets and MFs. The values for dG should be then converted from object type to float, by executing *Target_processing.ipynb* which generates *MFP_and_Targets_839_complexes_fixed_targets.csv* file.
-The problem is that when MFs are saved as part of csv file, then they are saved as strings. To overcome this issue, MFs are generated and saved separately in npy file (*MFP_radius_3_4096_Suppressed.npy*), which also should be converted to the numpy readable format later.   
+Run script *RDKit_features_MFPs.ipynb* located in folder “mol_data_TRAINING”. The script generates a csv file (*MFP_and_Targets_839_complexes.csv*) with targets (dG of insertion and protonation) and Morgan fingerprints (MFs). The values for dG should be then converted from object type to float, by executing *Target_processing.ipynb* which generates *MFP_and_Targets_839_complexes_fixed_targets.csv* file.
+The problem is that when MFs are saved as part of csv file, then they are saved as strings. To overcome this issue, MFs are generated and saved separately in npy file (*MFP_radius_3_4096_Suppressed.npy*), which also should be converted to the numpy readable format later. So in the end, the two files are generated and used further for machine learning investigation:
+
+- *MFP_and_Targets_839_complexes_fixed_targets.csv* (containing names of complexes, their *mol* representaiton and dG values for insertion and protonation)
+
+- *MFP_radius_3_4096_Suppressed.npy* (containing MFs)
+
+
+## Rest of chemical space (3735 complexes)
 
 To generate MFs from the rest of complexes (3735 complexes), execute *MFs_rest_of_data.ipynb* located in folder “rest_of_batch_3735_complexes”.
 
