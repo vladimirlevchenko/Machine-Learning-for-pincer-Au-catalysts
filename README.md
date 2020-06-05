@@ -462,6 +462,7 @@ The problem is that when MFs are saved as part of csv file, then they are saved 
 
 - *MFP_radius_3_4096_Suppressed.npy* (containing MFs)
 
+<img width="1096" alt="MFs_and_targets" src="https://user-images.githubusercontent.com/12988626/83902601-f788f800-a75c-11ea-85bf-7a6d5fe6a504.png">
 
 ## Rest of chemical space (3735 complexes)
 
