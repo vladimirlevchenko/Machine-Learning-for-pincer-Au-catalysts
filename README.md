@@ -439,7 +439,7 @@ In previous section, it was demonstrated how thermochemistry of acetylene insert
 
 ![histogram_dG_acetylene_insertion](https://user-images.githubusercontent.com/12988626/83451761-cd32f400-a457-11ea-9b05-2ff814479994.png)
 
-As it is shown on a histogram, thermochemistry differs almost on 15 kcal/mol, varying from -23 to -7 kcal/mol.
+From the inspection of the histogram, we observe how spread the data is. Difference in thermochemistry is almost 15 kcal/mol, varying from -23 to -7 kcal/mol. The mean value is = **XXXX**. The complexes of interest can absolutely be those, that are on extreems - those that result in most thermocheneutral reaction and those that result in exergonic (least thermoneutral) reaction. 
 
 Features generation:
 
