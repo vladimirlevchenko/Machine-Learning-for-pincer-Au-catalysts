@@ -543,6 +543,14 @@ print(NN)
 
 Prediction and data visualization is not depicted here. The whole code can be found in *RDKit_NN_MFs_insertion.ipynb*.
 
+Results:
+
+Text here
+![Unknown-2](https://user-images.githubusercontent.com/12988626/83944915-5905a100-a807-11ea-93a4-5983f4e75d06.png)
+
+Text here
+
+
 
 ## Welcome to GitHub Pages
 
