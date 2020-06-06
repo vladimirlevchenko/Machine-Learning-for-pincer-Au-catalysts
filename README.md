@@ -545,7 +545,7 @@ Prediction and data visualization is not depicted here. The whole code can be fo
 
 Results:
 
-<img src="pictures/pictures_NN/learning_curve.png" width="200"> <img src="pictures/pictures_NN/testing_plot.png" width="200"> <img src="pictures/pictures_NN/train_plot.png" width="200">
+<img src="pictures/pictures_NN/learning_curve.png" width="230"> <img src="pictures/pictures_NN/testing_plot.png" width="230"> <img src="pictures/pictures_NN/train_plot.png" width="230">
 
 
 ## Welcome to GitHub Pages
