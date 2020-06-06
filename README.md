@@ -545,16 +545,10 @@ Prediction and data visualization is not depicted here. The whole code can be fo
 
 Results:
 
-Text here
-![Unknown-2](https://user-images.githubusercontent.com/12988626/83944915-5905a100-a807-11ea-93a4-5983f4e75d06.png)
+<img src "pictures/pictures_NN/learning_curve.png">
 
-Text here
-
-![Unknown-4](https://user-images.githubusercontent.com/12988626/83944952-9d913c80-a807-11ea-81f3-197d385d5dd7.png)
-
-![Unknown-5](https://user-images.githubusercontent.com/12988626/83944969-b699ed80-a807-11ea-9a71-40f167ffdff0.png)
-
-
+![](pictures/pictures_NN/testing_plot.png)
+![](pictures/pictures_NN/train_plot.png)
 
 ## Welcome to GitHub Pages
 
