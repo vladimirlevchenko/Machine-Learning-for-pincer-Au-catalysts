@@ -468,6 +468,81 @@ The problem is that when MFs are saved as part of csv file, then they are saved 
 
 To generate MFs from the rest of complexes (3735 complexes), execute *MFs_rest_of_data.ipynb* located in folder “rest_of_batch_3735_complexes”.
 
+# Neural Network (NN)
+
+Files with codes are located in folder "neural_network". First part of the code imports required modules and packages. Thereafter, the data are imported, following features and targets defininig and splitting into test and train batches.  
+
+```ruby
+import pandas as pd
+import numpy as np
+
+from matplotlib import pyplot as plt
+from pandas import DataFrame
+from keras.models import Sequential
+from keras.layers import Dense
+from keras.wrappers.scikit_learn import KerasRegressor
+from sklearn.model_selection import cross_val_score
+from sklearn.model_selection import KFold
+from sklearn.preprocessing import StandardScaler
+from sklearn.pipeline import Pipeline
+from keras.optimizers import SGD
+from sklearn.model_selection import train_test_split
+from sklearn.metrics import mean_absolute_error, mean_squared_error
+from sklearn import preprocessing
+from tensorflow import keras
+from keras.layers import Dropout
+import pickle
+from numpy import load
+
+# set a random seed
+from numpy.random import seed
+seed(1)
+from tensorflow import set_random_seed
+set_random_seed(2)
+
+# Loading the dataset
+df = pd.read_csv("MFP_and_Targets_839_complexes_fixed_targets.csv", sep = ";")
+
+# load array
+morgan_Fingerprints = load('MFP_radius_3_4096_Suppressed.npy', allow_pickle=True)
+
+# Converting Morgan fingerprints from strings to numpy array 
+morgan_Fingerprints = morgan_Fingerprints.values.tolist()
+df["added_MF"] = morgan_Fingerprints
+
+dataset = df.values
+X = dataset[:,-1]
+y_ins = dataset[:,2]
+X = np.stack( X, axis=0 )
+
+# Data train-test split
+X_train, X_test, y_train, y_test = train_test_split(X, y_ins, test_size = 0.1, random_state = 0)
+
+```
+
+text here
+
+```ruby
+def baseline_model():
+    model = Sequential()
+    model.add(Dense(64, input_dim=4096, activation='tanh', kernel_regularizer=keras.regularizers.l2(l=0.0001)))
+    model.add(Dense(64, activation='tanh',kernel_regularizer=keras.regularizers.l2(l=0.0001)))
+    model.add(Dense(64, activation='tanh',kernel_regularizer=keras.regularizers.l2(l=0.0001)))
+    model.add(Dense(64, activation='tanh',kernel_regularizer=keras.regularizers.l2(l=0.0001)))
+    model.add(Dense(64, activation='tanh',kernel_regularizer=keras.regularizers.l2(l=0.0001)))
+    model.add(Dense(1))
+    return model
+NN = baseline_model()
+NN.summary()
+
+NN.compile(loss='mean_absolute_error', optimizer='adam', metrics=['mae'])
+history = NN.fit(X_train, y_train, epochs=300, batch_size=32, validation_split=0.1)
+print(NN)
+
+```
+
+Prediction and data visualization is not depicted here. The whole code can be found in *RDKit_NN_MFs_insertion.ipynb*.
+
 
 ## Welcome to GitHub Pages
 
