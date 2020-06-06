@@ -545,10 +545,8 @@ Prediction and data visualization is not depicted here. The whole code can be fo
 
 Results:
 
-<img src="pictures/pictures_NN/learning_curve.png" width="100">
+<img src="pictures/pictures_NN/learning_curve.png" width="200"> <img src="pictures/pictures_NN/testing_plot.png" width="200"> <img src="pictures/pictures_NN/train_plot.png" width="200">
 
-![](pictures/pictures_NN/testing_plot.png)
-![](pictures/pictures_NN/train_plot.png)
 
 ## Welcome to GitHub Pages
 
