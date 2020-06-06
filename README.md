@@ -470,7 +470,7 @@ To generate MFs from the rest of complexes (3735 complexes), execute *MFs_rest_o
 
 # Neural Network (NN)
 
-Files with codes are located in folder "neural_network". First part of the code imports required modules and packages. Thereafter, the data are imported, following features and targets defininig and splitting into test and train batches.  
+Files with codes are located in folder "neural_network". The first part of the code imports required modules and packages. To achieve reproducibility in results, we are "seeding" random processes.   
 
 ```ruby
 import pandas as pd
@@ -499,7 +499,11 @@ from numpy.random import seed
 seed(1)
 from tensorflow import set_random_seed
 set_random_seed(2)
+```
 
+Next step is to import our data. The dataset includes CSV file with targets (dG of insertion) and names of complexes. The features (Morgan fingerprints) are imported from the NPY file. We can load this easily using the pandas library. We can then split the input (X) and output (Y) attributes so that they are easier to model with Keras and scikit-learn. The split is 10% for training and 90% for testing.
+
+```ruby
 # Loading the dataset
 df = pd.read_csv("MFP_and_Targets_839_complexes_fixed_targets.csv", sep = ";")
 
@@ -519,8 +523,9 @@ X = np.stack( X, axis=0 )
 X_train, X_test, y_train, y_test = train_test_split(X, y_ins, test_size = 0.1, random_state = 0)
 
 ```
+Below we define the model. It is a sequential model that has five fully connected hidden layers with 64 neurons and input attributes (4096). The network uses good practices such as the activation function for the hidden layer ("tanh"). No activation function is used for the output layer because it is a regression problem and we are interested in predicting numerical values directly without transform. The performance of the network is improved with L2 regularization.
 
-text here
+The ADAM optimization algorithm is used and a mean absolute error loss function is optimized. This will be the same metric that we will use to evaluate the performance of the model. The model is then trained (or fit) with 300 epochs and batch size of 32. 
 
 ```ruby
 def baseline_model():
@@ -540,10 +545,10 @@ history = NN.fit(X_train, y_train, epochs=300, batch_size=32, validation_split=0
 print(NN)
 
 ```
+Parts of the code for prediction and data visualization is not depicted here. The whole code can be found in *RDKit_NN_MFs_insertion.ipynb*.
 
-Prediction and data visualization is not depicted here. The whole code can be found in *RDKit_NN_MFs_insertion.ipynb*.
-
-Results:
+The results are provided below. From the plot of loss, we can see that the model has comparable performance on both train and validation datasets. If these parallel plots start to depart consistently, it might be a sign to stop training at an earlier epoch.
+The agreement plots between calculated values and predicted for test and training is provided below. A very good prediction performance with mean error **0.68 kcal/mol** and R^2 of 89% (test) and 97% (train), indicates this ANN is suitable for prediction of reaction's thermochemistry. 
 
 <img src="pictures/pictures_NN/learning_curve.png" width="270"> <img src="pictures/pictures_NN/testing_plot.png" width="270"> <img src="pictures/pictures_NN/train_plot.png" width="270">
 
